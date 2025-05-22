@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evenements</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Mes Evenements</h1>
+      <select id="theme">
+        <option value="obscure">Theme Obscure</option>
+        <option value="clair">Theme Clair</option>
+      </select>
+    </header>
+    <main>
+      <div id="listeEvenements"></div>
+      <div id="planning">
+        <h2>Mon Planning</h2>
+      </div>
+      <!--  <div id="modale" class="modale">
+        <div class="modale-contenu">
+          <span id="fermerModale" class="fermer">&times;</span>
+          <h2>Modale</h2>
+          <p>Ceci est une fenêtre modale !</p>
+        </div>
+      </div> -->
+    </main>
+    <template id="templateEvenement">
+      <div class="carte">
+        <h2 class="titre"></h2>
+        <p><strong>Date :</strong> <span class="date"></span></p>
+        <p><strong>Lieu :</strong> <span class="lieu"></span></p>
+
+        <p class="description"></p>
+        <div class="actions">
+          <button class="voir">Voir détail</button>
+          <button class="ajouter">Ajouter</button>
+        </div>
+      </div>
+    </template>
+  </body>
+  <script src="scritp.js"></script>
+</html>

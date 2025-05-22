@@ -1,5 +1,15 @@
 const conteneur = document.getElementById("listeEvenements");
 const template = document.getElementById("templateEvenement");
+const modale = document.getElementById("modale");
+const modaleTitre = document.getElementById("modaleTitre");
+const modaleDate = document.getElementById("modaleDate");
+const modaleLieu = document.getElementById("modaleLieu");
+const modaleDescription = document.getElementById("modaleDescription");
+const modaleUrl = document.getElementById("modaleUrl");
+const boutonFermer = document.getElementById("fermer");
+function nettoyerHTML(html) {
+  return html.replace(/<[^>]+>/g, "").trim();
+}
 window.addEventListener("DOMContentLoaded", async () => {
   try {
     const response = await fetch(
@@ -17,20 +27,24 @@ window.addEventListener("DOMContentLoaded", async () => {
       const date = event.start_date;
       const description = event.description;
       const lieu = event.venue?.venue || "Lieu non spécifié";
+      const url = event.url;
+      console.log(url);
       const clone = template.content.cloneNode(true);
-
-      // Exemples de données fictives
       clone.querySelector(".titre").textContent = titre;
       clone.querySelector(".lieu").textContent = lieu;
       clone.querySelector(".date").textContent = date;
-      clone.querySelector(".description").textContent =
-        "Une soirée musicale inoubliable avec des artistes internationaux.";
-
-      // Boutons
       clone.querySelector(".voir").addEventListener("click", () => {
-        alert("Détail de l'événement : Concert Jazz à Théâtre de la Ville.");
+        modaleTitre.textContent = titre;
+        modaleDate.textContent = date;
+        modaleLieu.textContent = lieu;
+        modaleDescription.textContent = nettoyerHTML(description);
+        modaleUrl.href = event.url;
+        modaleUrl.textContent = event.url;
+        modale.style.display = "flex"; // Affiche la modale
       });
-
+      boutonFermer.addEventListener("click", () => {
+        modale.style.display = "none";
+      });
       clone.querySelector(".ajouter").addEventListener("click", () => {
         alert("Événement ajouté !");
       });

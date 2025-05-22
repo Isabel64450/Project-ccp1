@@ -19,13 +19,19 @@
       <div id="planning">
         <h2>Mon Planning</h2>
       </div>
-      <!--  <div id="modale" class="modale">
+      <div id="modale" class="modale">
         <div class="modale-contenu">
-          <span id="fermerModale" class="fermer">&times;</span>
-          <h2>Modale</h2>
-          <p>Ceci est une fenêtre modale !</p>
+          <span class="fermer" id="fermer">&times;</span>
+          <h2 id="modaleTitre"></h2>
+          <p><strong>Date :</strong> <span id="modaleDate"></span></p>
+          <p><strong>Lieu :</strong> <span id="modaleLieu"></span></p>
+          <p id="modaleDescription"></p>
+          <strong>Voir l'événement : </strong>
+          <a id="modaleUrl" href="#" target="_blank" rel="noopener noreferrer"
+            >Lien vers l'événement</a
+          >
         </div>
-      </div> -->
+      </div>
     </main>
     <template id="templateEvenement">
       <div class="carte">

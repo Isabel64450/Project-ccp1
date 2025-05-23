@@ -48,9 +48,9 @@ header {
   padding: 1rem;
   border-radius: 10px;
   transition: background-color 0.3s, border-color 0.3s;
-  flex: 1 1 250px;
+  flex: 1 1 280px;
   max-width: 300px;
-  min-height: 250px;
+  min-height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
